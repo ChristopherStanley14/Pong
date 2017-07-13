@@ -29,7 +29,6 @@ Game.prototype.draw = function() {
   this.p1.draw(this.context);
   this.p2.draw(this.context);
 
-
   this.display1.draw(this.context);
   this.display2.draw(this.context);
 };
