@@ -1,3 +1,18 @@
 #game {
-  background-color: #353535;
+  background-color: #5c5c5c;
+  padding: 0;
+  margin: auto;
+  display: block;
+}
+
+#title {
+  text-align: center;
+  font-size: 60px;
+  color: white;
+  font-family: courier;
+  margin-bottom: 10px;
+}
+
+body {
+  background-color: black;
 }

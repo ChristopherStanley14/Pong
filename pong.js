@@ -8,16 +8,16 @@ function Game() {
 
   this.p1 = new Paddle(5, 0);
   this.p1.y = this.height / 2 - this.p1.height / 2;
-  this.display1 = new Display(this.width / 4, 25);
-  this.p2 = new Paddle(this.width - 5, 0);
+  this.display1 = new Display(this.width / 4, 35);
+  this.p2 = new Paddle(this.width - 12, 0);
   this.p2.y = this.height / 2 - this.p2.height / 2;
-  this.display2 = new Display(this.width * 3 / 4, 25);
+  this.display2 = new Display(this.width * 3 / 4, 35);
 
   this.ball = new Ball();
   this.ball.x = this.width / 2;
   this.ball.y = this.height / 2;
   this.ball.vy = Math.floor(Math.random() * 12 - 6);
-  this.ball.vx = 7 - Math.abs(this.ball.vy);
+  this.ball.vx = 10 - Math.abs(this.ball.vy);
 }
 
 Game.prototype.draw = function() {
@@ -42,15 +42,15 @@ Game.prototype.update = function() {
   this.display2.value = this.p2.score;
 
   if (this.keys.isPressed(83)) { // DOWN
-    this.p1.y = Math.min(this.height - this.p1.height, this.p1.y + 4);
+    this.p1.y = Math.min(this.height - this.p1.height, this.p1.y + 10);
   } else if (this.keys.isPressed(87)) { // UP
-    this.p1.y = Math.max(0, this.p1.y - 4);
+    this.p1.y = Math.max(0, this.p1.y - 10);
   }
 
   if (this.keys.isPressed(40)) { // DOWN
-    this.p2.y = Math.min(this.height - this.p2.height, this.p2.y + 4);
+    this.p2.y = Math.min(this.height - this.p2.height, this.p2.y + 10);
   } else if (this.keys.isPressed(38)) { // UP
-    this.p2.y = Math.max(0, this.p2.y - 4);
+    this.p2.y = Math.max(0, this.p2.y - 10);
   }
 
 
@@ -98,7 +98,7 @@ Game.prototype.score = function(p) {
   this.ball.y = p.y + p.height / 2;
 
   this.ball.vy = Math.floor(Math.random() * 12 - 6);
-  this.ball.vx = 7 - Math.abs(this.ball.vy);
+  this.ball.vx = 10 - Math.abs(this.ball.vy);
   if (player == 1)
     this.ball.vx *= -1;
 }
@@ -110,6 +110,7 @@ function Display(x, y) {
 }
 
 Display.prototype.draw = function(p) {
+  p.font = '35px Arial';
   p.fillText(this.value, this.x, this.y);
 };
 
@@ -124,8 +125,8 @@ function MainLoop() {
 function Paddle(x, y) {
   this.x = x;
   this.y = y;
-  this.width = 2;
-  this.height = 28;
+  this.width = 8;
+  this.height = 65;
   this.score = 0;
 }
 
@@ -164,8 +165,8 @@ function Ball() {
   this.y = 0;
   this.vx = 0;
   this.vy = 0;
-  this.width = 4;
-  this.height = 4;
+  this.width = 12;
+  this.height = 12;
 }
 
 Ball.prototype.update = function() {
