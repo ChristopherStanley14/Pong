@@ -8,10 +8,10 @@ function Game() {
 
   this.p1 = new Paddle(5, 0);
   this.p1.y = this.height / 2 - this.p1.height / 2;
-  this.display1 = new Display(this.width / 4, 35);
+  this.display1 = new Display(this.width / 4, 45);
   this.p2 = new Paddle(this.width - 12, 0);
   this.p2.y = this.height / 2 - this.p2.height / 2;
-  this.display2 = new Display(this.width * 3 / 4, 35);
+  this.display2 = new Display(this.width * 3 / 4, 45);
 
   this.ball = new Ball();
   this.ball.x = this.width / 2;
@@ -110,7 +110,7 @@ function Display(x, y) {
 }
 
 Display.prototype.draw = function(p) {
-  p.font = '35px Arial';
+  p.font = '50px Arial';
   p.fillText(this.value, this.x, this.y);
 };
 
