@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Pong</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script defer src="pong.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
@@ -13,7 +14,8 @@
     </div>
     <canvas id="game" width="924" height="512"></canvas>
     <div class="col-md-12 text-center">
-    <button onclick="location=''" class="btn btn-danger">Reset</button>
+    <button onclick="MainLoop()" class="btn btn-primary">Start</button>
+    <button onclick="location=''" class="btn btn-danger" style="display: none">Reset</button>
 </div>
   </body>
 </html>

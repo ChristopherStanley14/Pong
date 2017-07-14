@@ -117,6 +117,8 @@ Display.prototype.draw = function(p) {
 var game = new Game();
 
 function MainLoop() {
+  $(".btn-primary").hide();
+  $(".btn-danger").show();
   game.update();
   game.draw();
   setTimeout(MainLoop, 33.3333);
@@ -178,4 +180,4 @@ Ball.prototype.draw = function(p) {
   p.fillRect(this.x, this.y, this.width, this.height);
 };
 
-MainLoop();
+// MainLoop();
